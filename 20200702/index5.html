@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>마우스를 올려 주세요.</p>
+    </div>
+
+
+
+
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        var box = document.querySelector('#box');
+            var touch = {
+                a: function(){
+                    box.innerHTML = '나를 건드렸군요!';
+                    this.style.background = 'red';
+                },
+                b: function(){
+                    box.innerHTML = '손을 떼었군요!';
+                    this.style.background = '';
+                },
+                c: function(e){
+                    var touchobj = e.changedTouches[0];
+                    var x = parseInt(touchobj.clientX), 
+                    y = parseInt(touchobj.clientY), 
+                    ex = x -0; 
+                    ey = y - 0;
+                    box.innerHTML = '만지는 중입니다.';
+                    this.style.background = 'yellow';
+                    this.style.left = ex+'px';
+                    this.style.top = ey + 'px';
+                    console.log(touchobj);
+                }
+            }
+            box.addEventListener('touchstart',touch.a);
+            box.addEventListener('touchend',touch.b);
+            box.addEventListener('touchmove',touch.c);
+    </script>
+</body>
+</html>
