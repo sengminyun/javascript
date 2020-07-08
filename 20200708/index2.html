@@ -6,30 +6,33 @@
     <title>Document</title>
 
     <style>
-        .car-box{
-            border-radius: 5px;
-            border: 5px solid silver;
-            height: 500px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            width: 80%;
-        }
-        .car-box .car{
-            background-repeat: no-repeat;
-            background-position: bottom;
-            bottom: 100%;
-            height: 1150px;
-            position: absolute;
-            width: 220px;
-        }
-        .carbox .car .num1{
-            background: url('../images/img1.gif');
-        }
+        .carbox {
+   border-radius:5px;
+   border:5px solid silver;
+   height:500px;
+   margin:0 auto;
+   overflow:hidden;
+   position:relative; 
+   width:80%;
+}
+.carbox .car {
+   background-repeat:no-repeat;
+   background-position:bottom;
+   bottom:100%;
+   height:150px;
+   position:absolute;
+   width:220px;
+}
+.carbox .car.num1 { 
+    background: url('images/img1.gif');
+}
+.carbox .car.num2 { 
+    background: url('images/img2.gif');
+}
     </style>
 </head>
 <body>
-    <div class="car-box"></div>
+    <div class="carbox"></div>
     <div style="text-align: center; margin-top: 10px;">
         <button type="button" onclick="go()">출동!</button>
     </div>
