@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>주기적으로 Ajax 요청하기</h1>
+    <p id="text"></p>
+
+
+    <script type="text/javascript">
+       function sendRequest(){
+            var httpRequest = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == XMLHttpRequest.DONE && httpRequest.status == 200){
+                    document.getElementById("text").innerHTML = httpRequest.responseText;
+                }
+            }
+            xhttp.open("GET","asd.php");
+            xhttp.send();
+        }
+        window.setInterval("sendRequest()",500);
+    </script>
+</body>
+</html>
